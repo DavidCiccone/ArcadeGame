@@ -1,6 +1,16 @@
 frontend-nanodegree-arcade-game
 ===============================
 
-Students should use this rubric: https://www.udacity.com/course/viewer#!/c-ud015/l-3072058665/m-3072588797
+Game will run in most modern browsers that support Canvas and HTML5
 
-for self-checking their submission.
+To run the game open file index.html
+
+Navigate the player across the road to the water while avoiding the 
+
+crossing bugs.  
+
+Reaching the water resets the player to the begining.  
+
+Being hit by a bug before reaching the water resets the player.
+
+Have fun!

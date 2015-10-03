@@ -9,8 +9,6 @@ var Enemy = function Enemy(x, y) {
     this.width = 50;
     this.height = 171;
     this.sprite = 'images/enemy-bug.png';
-    
-  
 }
 
 // Update the enemy's position, required method for game
@@ -20,10 +18,9 @@ Enemy.prototype.update = function(dt) {
     // which will ensure the game runs at the same speed for
     // all computers.
 
-//Move the Bugs
+//Moves the bugs and set their speed
 var max = 500;
 var min = 1;
-
 this.x = this.x + Math.floor(Math.random() * (max - min) + min) * dt;
    
 //Resets bugs back to the start at or behind -120 px
@@ -64,8 +61,6 @@ if (this.x < allEnemies[i].x && this.x > allEnemies[i].x - this.width
     && this.y < allEnemies[i].y && this.y > allEnemies[i].y - this.height) 
 {this.x = 200, this.y = 400}
 }
-
-
 }
 
 
@@ -83,16 +78,11 @@ if(Key === 'down'){this.y += 90;}
 }
 
 
-
-
 // Now instantiate your objects.
 // Place all enemy objects in an array called allEnemies
 // Place the player object in a variable called player
 var allEnemies = [new Enemy (-400,65), new Enemy (-275,145), new Enemy (-120,225), new Enemy (-650,145), new Enemy (-1000,65), new Enemy (-850,65)];
 var player = new Player(200, 400);
-
-//, new Enemy (-275,145), new Enemy (-120,225), new Enemy (-650,145), new Enemy (-1000,65), new Enemy (-850,65)
-
 
 // This listens for key presses and sends the keys to your
 // Player.handleInput() method. You don't need to modify this.
