@@ -1,3 +1,30 @@
 body {
     text-align: center;
+    background-color: red;
+    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
+   	
+   
+ }
+
+.wrapper {
+	display: inline-block;
+	text-align: center;
+	
+}
+
+.score {
+	float: right;
+	padding-top: 100px;
+	text-align: right;
+	
+	
+
+
+}
+
+#someBox {
+	float: left;
+	margin-left: auto;
+	margin-right: auto;
 }
