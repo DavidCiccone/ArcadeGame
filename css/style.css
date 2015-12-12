@@ -3,8 +3,19 @@ body {
     background-color: red;
     font-weight: bold;
     font-family: "Montserrat", sans-serif;
-   	
-   
- }
+   	 }
 
+   	 #sco, #score {
+   	 	float: left;
+   	 }
+
+#score {
+	padding-left: 5px;
+}
+
+
+.sc {
+	display: table;
+    margin: 0 auto;
+}
 

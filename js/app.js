@@ -41,7 +41,10 @@ var Player = function Player(x, y) {
     this.width = 50;
     this.height = 171;
     this.sprite = 'images/char-boy.png';
+
 };
+
+var score = 1; //score increment
 
 Player.prototype.update = function() {
     // Now write your own player class
@@ -59,10 +62,16 @@ Player.prototype.update = function() {
         this.y = 400;
     }
 
-    //Resets the player once it hits the water
+
+
+
+
+    //Resets the player once it hits the water and adds 1 to the score
     if (this.y < 0) {
         this.x = 200, this.y = 400;
-    }
+        document.getElementById("score").innerHTML = score++;
+                    }
+
 
     //Enemy collision detection
     for (var i = 0; i < allEnemies.length; i++) {
@@ -113,3 +122,5 @@ document.addEventListener('keyup', function(e) {
 
     player.handleInput(allowedKeys[e.keyCode]);
 });
+
+
