@@ -52,8 +52,8 @@ Player.prototype.update = function() {
     // a handleInput() method.
 
     //keeps player within canvas boundaries
-    if (this.x >= 555) {
-        this.x = 500;
+    if (this.x >= 455) {
+        this.x = 400;
     }
     if (this.x <= 0) {
         this.x = 0;
@@ -112,7 +112,7 @@ var player = new Player(200, 400);
 
 // This listens for key presses and sends the keys to your
 // Player.handleInput() method. You don't need to modify this.
-document.addEventListener('keydown', function(e) {
+document.addEventListener('keyup', function(e) {
     var allowedKeys = {
         37: 'left',
         38: 'up',
