@@ -1,5 +1,7 @@
 "use strict";
 // Enemies our player must avoid
+var startX = 300;
+var startY = 400;
 var Enemy = function Enemy(x, y) {
     // Variables applied to each of our instances go here,
     // we've provided one for you to get started
@@ -52,8 +54,8 @@ Player.prototype.update = function() {
     // a handleInput() method.
 
     //keeps player within canvas boundaries
-    if (this.x >= 555) {
-        this.x = 500;
+    if (this.x >= 666) {
+        this.x = 600;
     }
     if (this.x <= 0) {
         this.x = 0;
@@ -68,7 +70,7 @@ Player.prototype.update = function() {
 
     //Resets the player once it hits the water and adds 1 to the score
     if (this.y < 0) {
-        this.x = 200, this.y = 400;
+        this.x = startX, this.y = startY;
         document.getElementById("score").innerHTML = score++;
                     }
 
@@ -76,7 +78,7 @@ Player.prototype.update = function() {
     //Enemy collision detection
     for (var i = 0; i < allEnemies.length; i++) {
         if (this.x < allEnemies[i].x && this.x > allEnemies[i].x - this.width && this.y < allEnemies[i].y && this.y > allEnemies[i].y - this.height) {
-            this.x = 200, this.y = 400;
+            this.x = startX, this.y = startY;
         }
     }
 };
@@ -108,7 +110,7 @@ Player.prototype.handleInput = function(Key) {
 // Place all enemy objects in an array called allEnemies
 // Place the player object in a variable called player
 var allEnemies = [new Enemy(-400, 65), new Enemy(-275, 145), new Enemy(-120, 225), new Enemy(-650, 145), new Enemy(-1000, 65), new Enemy(-850, 65)];
-var player = new Player(200, 400);
+var player = new Player(startX, startY);
 
 // This listens for key presses and sends the keys to your
 // Player.handleInput() method. You don't need to modify this.
