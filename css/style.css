@@ -6,16 +6,61 @@ body {
    	 }
 
    	 #sco, #score {
-   	 	float: left;
+   	 	
    	 }
+.wrapper {
+  width: 707px;
+  height: 300px;
+  margin: 0 auto;
+  
 
+  
+}
 #score {
 	padding-left: 5px;
 }
 
-
 .sc {
-	display: table;
-    margin: 0 auto;
+	
+
+float: right;
+margin: -3em 5em 2em 0;
+
+
+
 }
 
+.lives {
+  background-color: white;
+  width: 200px;
+  height: 50px; 
+  border-radius: 7px;
+  
+
+  
+}
+
+.title-box {
+  float: left;
+  margin: 0 auto;
+  padding-left: 2em;
+  top: 0;
+
+}
+
+ul li {
+  list-style-type: none;
+  display: inline;
+ padding-right: 10px;
+
+
+}
+
+.ullist {
+  margin-right: 1.85em;
+  
+}
+
+p {
+  margin-bottom: -25px;
+}

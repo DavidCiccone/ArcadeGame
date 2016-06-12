@@ -10,7 +10,7 @@ var Enemy = function Enemy(x, y) {
     this.x = x;
     this.y = y;
     this.width = 50;
-    this.height = 171;
+    this.height = 165;
     this.sprite = 'images/enemy-bug.png';
 };
 
@@ -24,7 +24,7 @@ Enemy.prototype.update = function(dt) {
     //Moves the bugs and set their speed
     var max = 500;
     var min = 1;
-    this.x = this.x + Math.floor(Math.random() * (max - min) + min) * dt;
+    this.x = this.x + (Math.floor(Math.random() * (max - min + 1)) + min) * dt;
 
     //Resets bugs back to the start at or behind -120 px
     if (this.x > 800) {
@@ -41,7 +41,7 @@ var Player = function Player(x, y) {
     this.x = x;
     this.y = y;
     this.width = 50;
-    this.height = 171;
+    this.height = 165;
     this.sprite = 'images/char-boy.png';
 
 };
@@ -67,18 +67,18 @@ Player.prototype.update = function() {
 
 
 
-
     //Resets the player once it hits the water and adds 1 to the score
     if (this.y < 0) {
         this.x = startX, this.y = startY;
         document.getElementById("score").innerHTML = score++;
-                    }
+    }
 
 
     //Enemy collision detection
     for (var i = 0; i < allEnemies.length; i++) {
         if (this.x < allEnemies[i].x && this.x > allEnemies[i].x - this.width && this.y < allEnemies[i].y && this.y > allEnemies[i].y - this.height) {
             this.x = startX, this.y = startY;
+            removeLife();
         }
     }
 };
@@ -104,7 +104,51 @@ Player.prototype.handleInput = function(Key) {
         this.y += 90;
     }
 };
+/*
+$(document).on("pagecreate","#pageone",function(){
+  $("canvas").on("tap",function(){
+    $(this).hide();
+  });                       
+});
+*/
+//Removes a heart from the lives board when player is hit by an enemy 
+//and adds 1 to death counter when death counter = 3 gameover
 
+
+var death = 0;
+var step;
+
+function addHearts() {
+    for (step = 0; step < 3; step++) {
+        var node = document.createElement("li");
+        node.id = 'hrt';
+        var heartPic = document.createElement("img");
+        heartPic.setAttribute("src", "images/Heartsmall.png");
+        node.appendChild(heartPic);
+        document.getElementById("test").appendChild(node);
+    }
+}
+addHearts();
+
+function removeLife() {
+    var heart2 = document.getElementById("test");
+    var heart = document.getElementById("hrt");
+    heart2.removeChild(heart);
+    //heart.removeChild(heart.childNodes[0]);
+    death++;
+    if (death === 3) {
+        alert('Game Over');
+
+        //Resets score
+        document.getElementById("score").innerHTML = 0;
+
+        //Resets Lives
+        addHearts();
+
+        death = 0;
+
+    }
+}
 
 // Now instantiate your objects.
 // Place all enemy objects in an array called allEnemies
@@ -124,5 +168,3 @@ document.addEventListener('keydown', function(e) {
 
     player.handleInput(allowedKeys[e.keyCode]);
 });
-
-
