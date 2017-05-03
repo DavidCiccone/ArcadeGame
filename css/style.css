@@ -3,30 +3,24 @@ body {
     background-color: red;
     font-weight: bold;
     font-family: "Montserrat", sans-serif;
-   	 }
+    margin:0;
+    height: 100%;
+}
 
-   	 #sco, #score {
-   	 	
-   	 }
+   
 .wrapper {
   width: 707px;
   margin: 0 auto;
-  
-
-  
+  margin-top: -15px;  
 }
+
 #score {
 	padding-left: 5px;
 }
 
 .sc {
-	
-
-float: right;
-margin: -3em 5em 2em 0;
-
-
-
+  float: right;
+  margin: -3em 5em 2em 0;
 }
 
 .lives {
@@ -34,9 +28,6 @@ margin: -3em 5em 2em 0;
   width: 200px;
   height: 50px; 
   border-radius: 7px;
-  
-
-  
 }
 
 .title-box {
@@ -44,22 +35,22 @@ margin: -3em 5em 2em 0;
   margin: 0 auto;
   padding-left: 2em;
   top: 0;
-
 }
 
 ul li {
   list-style-type: none;
   display: inline;
- padding-right: 10px;
-
-
+  padding-right: 10px;
 }
 
 .ullist {
   margin-right: 1.85em;
-  
 }
 
 p {
   margin-bottom: -25px;
+}
+
+#gameBoard {
+  margin-top: -45px;
 }
